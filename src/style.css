@@ -1,0 +1,432 @@
+*, *::after, *::before {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    /* Borders */
+    --BORDER-BODY: 2px solid black;
+
+    /* Margin */
+    --MARGIN-LEFT-RIGHT: 14px
+}
+ 
+/* Everything of our App.js is getting injected into a div whose id is root so we need to handle that too. */
+#root {
+
+    width: 100%;
+}
+
+body {
+
+    min-height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+}
+
+#root {
+
+    flex-grow: 1;
+}
+
+.App {
+
+    width: 100%;
+    max-width: 800px;
+    min-height: 100vh;
+    margin: 0 auto;
+    border-left: var(--BORDER-BODY);
+    border-right: var(--BORDER-BODY);
+    box-shadow: 0px 0px 12px black;
+}
+
+/* || HEADER */
+.head {
+
+    position: sticky;
+    top: 0;
+}
+
+.header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: left;
+    color: black;
+    background-color: rgb(4, 255, 255);
+    width: 100%;
+}
+
+.header__section {
+
+    margin-left: var(--MARGIN-LEFT-RIGHT);
+    padding: 20px;
+}
+
+.header__icon {
+
+    margin-right: var(--MARGIN-LEFT-RIGHT);
+    padding: 20px;
+}
+
+.header__icon .icon{
+
+    font-size: 42px;
+    
+}
+
+/* || NAVBAR */
+.navbar {
+
+    background-color: rgb(5, 5, 15);
+}
+
+.navbar__section {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    padding: 18px;
+}
+
+.navbar__section .searchbox {
+
+    
+    flex-grow: 0.75;
+}
+
+.navbar__section .searchbox input {
+
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.navbar__section .navlink{
+
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 26px;
+}
+
+.navbar__section .navlink .navlinks{
+
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navbar__section .navlink .navlinks:hover {
+
+    color: white;
+    text-decoration: underline;
+}
+
+
+/* || MAIN */
+main {
+
+    width: 100%;
+    flex-grow: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* || POST STYLE WHERE EVERY POST IS DISPLAYED */
+.titlePostPage{
+
+    margin-top: 0.25em;
+}
+
+.post {
+
+    border-bottom: 1px solid grey;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: black;
+}
+
+.post .links {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.post .links .title {
+
+    font-size: 26px;
+}
+
+.post .links .datetime {
+
+    font-size: 14px;
+}
+
+.post .postBody {
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* || SINGLE POST STYLE */
+.singlePostDisplay {
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; 
+}
+
+.singlePostDisplay .singlePost {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0.5em 1.25em 0.5em 1.25em;
+    /* padding-left: 1.rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem; */
+}
+
+.singlePost .postTitle {
+
+    font-size: 32px;
+    text-decoration: underline;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.singlePost .postDate {
+
+    font-size: 16px;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    margin-bottom: 0.5em;
+}
+
+.singlePostDisplay .singlePost .postBody {
+
+    margin-top: 0.25em;
+    text-align: left;
+    font-size: clamp(0.5rem, 2.5vw, 1.5rem);
+}
+
+.singlePostDisplay .singlePost .buttons {
+
+    display: flex; 
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    margin-top: 2em;
+}
+
+.singlePostDisplay .singlePost .buttons .postDeleteButton {
+
+    padding: 1rem;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    border-radius: 16px;
+    background-color: rgb(238, 10, 10);
+    border: none;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.singlePostDisplay .singlePost .buttons .postEditButton {
+
+    padding: 1rem;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    border-radius: 16px;
+    background-color: rgb(126, 170, 170);
+    border: none;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.singlePostDisplay .singlePost .postDeleteButton:hover {
+
+    background-color: red;
+    cursor: pointer;
+}
+
+.singlePostDisplay .singlePost .buttons .postEditButton {
+
+    background-color: cyan;
+    cursor: pointer;
+}
+
+.notfound {
+
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.notfoundp {
+
+    font-size: 20px;
+}
+
+.notfoundlink {
+
+    color: black;
+}
+
+.notfoundlink:hover {
+
+    color: rgb(24, 23, 23);
+}
+
+
+.section__div {
+
+    border-bottom: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 1.25em;
+    text-decoration: none;
+}
+
+.link {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+}
+
+.post__section .post__div .link {
+
+    font: italic;
+    font-size: 14px;
+}
+
+
+/* || NEW POST */
+.newpostform {
+
+    width: inherit;
+    margin-top: 1em;
+}
+
+.form {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5em;
+    margin: 0em 1.5em 1em 1.5em;
+}
+
+.newpost {
+
+    margin-bottom: 0.75em;
+    text-decoration: underline;
+}
+
+.form label {
+
+    font-weight: bold;
+}
+
+.postlabel {
+
+    margin-top: 1em;
+}
+
+.title {
+
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    font-size: 16px;
+    margin-bottom: 0em;
+    width: 100%;
+}
+
+.body {
+
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    padding: 0.5em;
+    font-size: 16px;
+    border: 2px solid black;
+}
+
+.newpostform .submitnewpost {
+
+    margin-top: 1.25em;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    border-radius: 16px;
+    background-color: rgb(20, 165, 20);
+    border: none;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.newpostform .submitnewpost:hover {
+
+    background-color: rgb(6, 141, 6);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+/* || FOOTER */
+.footer {
+
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0.5rem;
+    position: sticky;
+    bottom: 0;
+    width: inherit;
+    max-width: inherit;
+    background-color: rgb(4, 255, 255);
+    color: black;
+}
+
+
+
+
+
